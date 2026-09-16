@@ -24,7 +24,7 @@ const conexion = mysql.createConnection({
     host: process.env.DB_HOST || "mysql-31ff77ad-hogarenergy.b.aivencloud.com",
     port: process.env.DB_PORT || 21571,
     user: process.env.DB_USER || "avnadmin",
-    password: process.env.DB_PASSWORD || // Sin clave en texto plano
+    password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME || "hogarenergy",
     ssl: {
         rejectUnauthorized: false
