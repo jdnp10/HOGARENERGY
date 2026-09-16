@@ -233,111 +233,47 @@ $800.000
 
 </section>
 <section class="formularioPublicidad">
+  <div class="formCard">
+    <h2>Solicitar Publicidad</h2>
+    <p class="formSubtitulo">Completa el formulario y nos pondremos en contacto contigo.</p>
 
-<h2>
+    <form id="formPublicidad">
+      <div class="formGroup">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
+      </div>
 
-Solicitar Publicidad
+      <div class="formGroup">
+        <label for="empresa">Empresa</label>
+        <input type="text" id="empresa" placeholder="Ej. Soluciones S.A.S." required>
+      </div>
 
-</h2>
+      <div class="formGrid">
+        <div class="formGroup">
+          <label for="celular">Celular</label>
+          <input type="tel" id="celular" placeholder="Ej. 300 123 4567" required>
+        </div>
 
-<form id="formPublicidad">
+        <div class="formGroup">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+        </div>
+      </div>
 
-<label>
+      <div class="formGroup">
+        <label for="plan">Seleccione un plan</label>
+        <select id="plan" required>
+          <option value="PLAN_1">Plan 1 ($70.000)</option>
+          <option value="PLAN_2">Plan 2 ($120.000)</option>
+          <option value="PLAN_3">Plan 3 ($200.000)</option>
+          <option value="PLAN_4">Plan 4 ($500.000)</option>
+          <option value="PLAN_5">Plan 5 ($800.000)</option>
+        </select>
+      </div>
 
-Nombre Completo
-
-</label>
-
-<input
-type="text"
-id="nombre"
-required>
-
-<label>
-
-Empresa
-
-</label>
-
-<input
-type="text"
-id="empresa"
-required>
-
-<label>
-
-Celular
-
-</label>
-
-<input
-type="text"
-id="celular"
-required>
-
-<label>
-
-Correo
-
-</label>
-
-<input
-type="email"
-id="correo"
-required>
-
-<label>
-
-Seleccione un plan
-
-</label>
-
-<select id="plan">
-
-<option value="PLAN_1">
-
-Plan 1 ($70.000)
-
-</option>
-
-<option value="PLAN_2">
-
-Plan 2 ($120.000)
-
-</option>
-
-<option value="PLAN_3">
-
-Plan 3 ($200.000)
-
-</option>
-
-<option value="PLAN_4">
-
-Plan 4 ($500.000)
-
-</option>
-
-<option value="PLAN_5">
-
-Plan 5 ($800.000)
-
-</option>
-
-</select>
-
-<br><br>
-
-<button
-type="submit"
-class="btn">
-
-Enviar Solicitud
-
-</button>
-
-</form>
-
+      <button type="submit" class="btn">Enviar Solicitud</button>
+    </form>
+  </div>
 </section>
 
 <script src="./js/publicidad.js"></script>
