@@ -3,7 +3,7 @@ ADMIN.JS
 HogarEnergy
 ==================================================*/
 
-const URL="http://localhost:3000/api";
+const URL="https://hogarenergy-1.onrender.com/api";
 
 /*==================================================
 INICIAR

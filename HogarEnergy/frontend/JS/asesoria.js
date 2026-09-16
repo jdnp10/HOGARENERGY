@@ -55,7 +55,7 @@ const respuesta=
 
 await fetch(
 
-"http://localhost:3000/api/asesoria",
+"https://hogarenergy-1.onrender.com/api/asesoria",
 
 {
 

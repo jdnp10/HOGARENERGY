@@ -41,7 +41,7 @@ const respuesta=
 
 await fetch(
 
-"http://localhost:3000/api/publicidad",
+"https://hogarenergy-1.onrender.com/api/publicidad",
 
 {
 
