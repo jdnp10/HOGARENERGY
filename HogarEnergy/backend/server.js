@@ -17,25 +17,29 @@ app.use(cors());
 app.use(express.json());
 
 /*====================================================
-                CONEXIÓN MYSQL
+            CONEXIÓN MYSQL (AIVEN)
 ====================================================*/
 
 const conexion = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "hogarenergy"
+    host: process.env.DB_HOST || "mysql-31ff77ad-hogarenergy.b.aivencloud.com",
+    port: process.env.DB_PORT || 21571,
+    user: process.env.DB_USER || "avnadmin",
+    password: process.env.DB_PASSWORD || // Sin clave en texto plano
+    database: process.env.DB_NAME || "hogarenergy",
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 conexion.connect((error) => {
     if (error) {
         console.log("--------------------------------");
-        console.log("ERROR CONECTANDO MYSQL");
+        console.log("ERROR CONECTANDO MYSQL AIVEN");
         console.log(error);
         console.log("--------------------------------");
     } else {
         console.log("--------------------------------");
-        console.log("MySQL conectado correctamente");
+        console.log("MySQL (Aiven) conectado correctamente");
         console.log("--------------------------------");
     }
 });
@@ -65,7 +69,6 @@ app.post("/api/publicidad", (req, res) => {
         default: valor = 0;
     }
 
-    // CORREGIDO: Se agregan 8 marcadores '?' para los 8 campos requeridos
     const sql = `
         INSERT INTO publicidad 
         (nombre, empresa, celular, correo, plan, valor, estado)
@@ -209,12 +212,11 @@ app.put("/api/asesoria/rechazar/:id", (req, res) => {
                 INICIO DEL SERVIDOR
 ====================================================*/
 
-const PUERTO = 3000;
+const PUERTO = process.env.PORT || 3000;
 app.listen(PUERTO, () => {
     console.log("======================================");
     console.log("   HOGARENERGY BACKEND INICIADO");
     console.log("======================================");
     console.log(`Servidor ejecutándose en el puerto ${PUERTO}`);
-    console.log("http://localhost:3000");
     console.log("======================================");
 });
